@@ -1,0 +1,420 @@
+{
+  "contract_name": "Shopfront",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "addProduct",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getProductCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBalanceContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "buyProduct",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "warehouse",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "customer",
+          "type": "address"
+        }
+      ],
+      "name": "ship",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "getProduct",
+      "outputs": [
+        {
+          "name": "productName",
+          "type": "string"
+        },
+        {
+          "name": "productPrice",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "customerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "makePayment",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": true,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogProductAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "productName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "productPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogProductGetted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "customer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogProductPurchased",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "LogWithdrawal",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x60606040525b32600160a060020a039081166000908152602081905260409020612710905560048054600160a060020a031916339092169190911790555b5b6107c48061004d6000396000f300606060405236156100935763ffffffff60e060020a6000350416632e1a7d4d81146100985780634268ff2d146100c25780634a348da91461012e57806366bd78fd146101535780638642269e146101785780638da5cb5b146101975780639b622769146101c65780639f0d6d0f146101f5578063b9db15b41461022b578063f8b2cb4f146102c1578063f98cf07c146102e7575b600080fd5b34156100a357600080fd5b6100ae60043561031d565b604051901515815260200160405180910390f35b34156100cd57600080fd5b6100ae600480359060446024803590810190830135806020601f82018190048102016040519081016040528181529291906020840183838082843750949650509335935061036e92505050565b604051901515815260200160405180910390f35b341561013957600080fd5b6101416103bd565b60405190815260200160405180910390f35b341561015e57600080fd5b6101416103c4565b60405190815260200160405180910390f35b6100ae6004356103d3565b604051901515815260200160405180910390f35b34156101a257600080fd5b6101aa61044d565b604051600160a060020a03909116815260200160405180910390f35b34156101d157600080fd5b6101aa61045c565b604051600160a060020a03909116815260200160405180910390f35b341561020057600080fd5b6100ae600435600160a060020a036024351661046b565b604051901515815260200160405180910390f35b341561023657600080fd5b6102416004356104ca565b6040518080602001838152602001828103825284818151815260200191508051906020019080838360005b838110156102855780820151818401525b60200161026c565b50505050905090810190601f1680156102b25780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b610141600160a060020a03600435166105f4565b60405190815260200160405180910390f35b34156102f257600080fd5b6100ae600160a060020a0360043516602435610613565b604051901515815260200160405180910390f35b60045460009033600160a060020a0390811691161461033b57600080fd5b600454600160a060020a031682156108fc0283604051600060405180830381858888f15060019450505050505b5b919050565b6000604080519081016040908152848252602080830185905260008781526001909152208151819080516103a69291602001906106c6565b5060208201516001918201559150505b9392505050565b6002545b90565b600160a060020a033016315b90565b6000818152600160208190526040822001543410156103f157600080fd5b60008051602061077983398151915282336001600086815260200190815260200160002060010154604051928352600160a060020a0390911660208301526040808301919091526060909101905180910390a15060015b919050565b600454600160a060020a031681565b600354600160a060020a031681565b600060008051602061077983398151915283336001600087815260200190815260200160002060010154604051928352600160a060020a0390911660208301526040808301919091526060909101905180910390a15060015b92915050565b6104d2610745565b600080600160008581526020019081526020016000209050806000018160010154818054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105885780601f1061055d57610100808354040283529160200191610588565b820191906000526020600020905b81548152906001019060200180831161056b57829003601f168201915b50505050509150925092506105ee565b838110156105b15780820151818401525b602001610598565b50505050905090810190601f1680156105de5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a15b50915091565b600160a060020a0381166000908152602081905260409020545b919050565b600160a060020a0333166000908152602081905260408120548290101561063c575060006104c4565b600160a060020a03338181166000908152602081905260408082208054879003905592861681528290208054850190557fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef918590859051600160a060020a039384168152919092166020820152604080820192909252606001905180910390a15060015b92915050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061070757805160ff1916838001178555610734565b82800160010185558215610734579182015b82811115610734578251825591602001919060010190610719565b5b50610741929150610757565b5090565b60206040519081016040526000815290565b6103c191905b80821115610741576000815560010161075d565b5090565b905600941ef7a98bca0186e0edd164418a7b5790fbd8650c23dee76f8fc034d170508ca165627a7a7230582056e46fe53f8571a800f6595b23a65b554f773066c214886bbe5c7ffcf1c1d2b00029",
+  "networks": {
+    "42": {
+      "events": {
+        "0xbdadebd430b2ffda90207bf76b1a837080ceb368bba8981dfeff8ad632530ab1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogProductAdded",
+          "type": "event"
+        },
+        "0xe4050a91d7296182bb326db41b530573817700e4a81ab1618ad0595f46d90b97": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "productName",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "productPrice",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogProductGetted",
+          "type": "event"
+        },
+        "0x941ef7a98bca0186e0edd164418a7b5790fbd8650c23dee76f8fc034d170508c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "customer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogProductPurchased",
+          "type": "event"
+        },
+        "0xef232fa02b2633bddc860db9d0d9b1c57fd83b506398b134edaebb6783d41e94": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "name": "LogWithdrawal",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x97ab556e75ef4478c957186a75a9b1eea072eb05",
+      "updated_at": 1516622985698
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1516622985698
+}

@@ -1,0 +1,257 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <fieldset>
+   <form #coinForm="ngForm">
+  <h1>Add Product</h1>
+    <div class="field">
+    <label class="label">Id:</label>
+    <p class="control">
+        <input
+          [(ngModel)]="addProductId"
+          class="input"
+          type="number"
+          placeholder="product id"
+          name = "addProductId"
+          required
+          #idModel="ngModel">
+    </div>
+
+  <div class="field">
+    <label class="label">Stock:</label>
+    <p class="control">
+      <input
+        [(ngModel)]="addProductName"
+        class="input"
+        type="test"
+        placeholder="product stock"
+        name = "addProductName"
+        required
+        #nameModel="ngModel">
+  </div>
+
+  <div class="field">
+    <label class="label">Price:</label>
+    <p class="control">
+      <input
+        [(ngModel)]="productPrice"
+        class="input"
+        type="number"
+        placeholder="product price"
+        name = "productPrice"
+        required
+        #priceModel="ngModel">
+  </div>
+
+     <div class="field is-grouped">
+       <p class="control">
+         <button
+           (click)="addProduct()"
+           class="button is-primary">
+           Add Product
+         </button>
+       </p>
+     </div>
+
+  </form>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+      <form #coinForm="ngForm">
+      <h1>Get Product</h1>
+      <div class="field">
+        <label class="label">Id:</label>
+        <p class="control">
+          <input
+            [(ngModel)]="getProductId"
+            class="input"
+            type="number"
+            placeholder="product id"
+            name = "getProductId"
+            required
+            #idModel="ngModel">
+      </div>
+
+      <div class="field is-grouped">
+        <p class="control">
+          <button
+            (click)="getProduct()"
+            class="button is-primary">
+            Get Product
+          </button>
+        </p>
+      </div>
+
+    </form>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <form #coinForm="ngForm">
+      <h1>Buy Product</h1>
+      <div class="field">
+        <label class="label">Id:</label>
+        <p class="control">
+          <input
+            [(ngModel)]="buyProductId"
+            class="input"
+            type="number"
+            placeholder="product id"
+            name = "buyProductId"
+            required
+            #idModel="ngModel">
+      </div>
+
+      <div class="field is-grouped">
+        <p class="control">
+          <button
+            (click)="buyProduct()"
+            class="button is-primary">
+            Buy Product
+          </button>
+        </p>
+      </div>
+
+    </form>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <form #coinForm="ngForm">
+      <h1>Ship Product</h1>
+      <div class="field">
+        <label class="label">Id:</label>
+        <p class="control">
+          <input
+            [(ngModel)]="shipProductId"
+            class="input"
+            type="number"
+            placeholder="product id"
+            name = "shipProductId"
+            required
+            #idModel="ngModel">
+      </div>
+
+      <div class="field">
+        <label class="label">Address:</label>
+        <p class="control">
+          <input
+            [(ngModel)]="productRecieverAddress"
+            class="input"
+            type="string"
+            placeholder="receiver address"
+            name = "productRecieverAddress"
+            required
+            #idModel="ngModel">
+      </div>
+
+      <div class="field is-grouped">
+        <p class="control">
+          <button
+            (click)="ship()"
+            class="button is-primary">
+            Ship Product
+          </button>
+        </p>
+      </div>
+
+    </form>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <form #coinForm="ngForm">
+      <h1>Make Payment</h1>
+      <div class="field">
+        <label class="label">Amount:</label>
+        <p class="control">
+          <input
+            [(ngModel)]="paymentAmount"
+            class="input"
+            type="number"
+            placeholder="amount"
+            name = "paymentAmount"
+            required
+            #idModel="ngModel">
+      </div>
+
+      <div class="field">
+        <label class="label">Address:</label>
+        <p class="control">
+          <input
+            [(ngModel)]="paymentReciever"
+            class="input"
+            type="string"
+            placeholder="receiver address"
+            name = "paymentReciever"
+            required
+            #idModel="ngModel">
+      </div>
+
+      <div class="field is-grouped">
+        <p class="control">
+          <button
+            (click)="makePayment()"
+            class="button is-primary">
+            Make Payment
+          </button>
+        </p>
+      </div>
+
+    </form>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <form #coinForm="ngForm">
+      <h1>Withdraw Sum</h1>
+      <div class="field">
+        <label class="label">Amount:</label>
+        <p class="control">
+          <input
+            [(ngModel)]="withdrawAmount"
+            class="input"
+            type="number"
+            placeholder="amount to withdraw"
+            name = "withdrawAmount"
+            required
+            #idModel="ngModel">
+      </div>
+
+      <div class="field is-grouped">
+        <p class="control">
+          <button
+            (click)="withdraw()"
+            class="button is-primary">
+            Withdraw Amount
+          </button>
+        </p>
+      </div>
+
+    </form>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <div class="field is-grouped">
+      <p class="control">
+        <button
+          (click)="getProductCount()"
+          class="button is-primary">
+         Product Amount
+        </button>
+      </p>
+    </div>
+  </fieldset>
+
+  </div>
